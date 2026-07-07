@@ -1,0 +1,32 @@
+# GitHub Trending Digest — Configuration
+# Non-sensitive settings only. Secrets go into GitHub Actions Secrets.
+
+search:
+  # Keywords target repos whose name/description/topics match.
+  # Quote multi-word phrases for exact match; single words match broadly.
+  keywords:
+    - "academic-writing"
+    - "thesis-writing"
+    - "paper-writing"
+    - "citation-management"
+    - "reference-manager"
+    - "literature-review"
+    - "scholarly-writing"
+    - "research-workflow"
+    - "zotero"
+    - "academic-paper"
+  min_stars_daily: 3
+  min_stars_weekly: 10
+  languages: []           # e.g. ["python", "javascript"] — empty = all
+  exclude_topics: []      # e.g. ["awesome-list"] to exclude curated lists
+
+report:
+  daily_max_repos: 10
+  weekly_max_repos: 20
+
+email:
+  # SMTP settings — actual credentials go into GitHub Secrets
+  smtp_host: "smtp.gmail.com"
+  smtp_port: 587
+  use_tls: true
+  from_name: "GitHub Trends Digest"
