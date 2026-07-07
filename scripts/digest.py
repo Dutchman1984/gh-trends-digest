@@ -171,8 +171,8 @@ def generate_report(repos: list[dict], mode: str) -> str:
 
 def send_email(report_md: str, config: dict, mode: str) -> None:
     """Send report via SMTP."""
-    smtp_host = os.environ.get("SMTP_HOST", config["email"]["smtp_host"])
-    smtp_port = int(os.environ.get("SMTP_PORT", config["email"]["smtp_port"]))
+    smtp_host = os.environ.get("SMTP_HOST") or config["email"]["smtp_host"]
+    smtp_port = int(os.environ.get("SMTP_PORT") or config["email"]["smtp_port"])
     smtp_user = os.environ["SMTP_USER"]
     smtp_pass = os.environ["SMTP_PASS"]
     email_to = os.environ["EMAIL_TO"]
